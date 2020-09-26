@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Form, Button, Container, Alert} from 'react-bootstrap';
 
 class Login extends Component {
 
@@ -40,13 +41,21 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this._handleSubmit}>
-                    <input type="text" name="username" value={this.state.username} onChange={this._handleChange}/><br/>
-                    <input type="password" name="password" value={this.state.password} onChange={this._handleChange}/><br/>
-                    <input type="submit" value="Login"/>
-                </form>
+                <Container>
+                    <Form onSubmit={this._handleSubmit}>
+                        <Form.Group>
+                            <Form.Label>Username</Form.Label>
+                            <Form.Control type="text" name="username" value={this.state.username} onChange={this._handleChange}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" name="password" value={this.state.password} onChange={this._handleChange}/>
+                        </Form.Group>
+                        <Button variant="primary" type="submit">Login</Button>
+                    </Form>
 
-                <h3>{this.state.message}</h3>
+                    <Alert variant="info">{this.state.message}</Alert>
+                </Container>
             </div>
         );
     }

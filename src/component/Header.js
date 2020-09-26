@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './mystyles.module.css';
+import {Jumbotron, Container} from 'react-bootstrap';
 
 class Header extends Component {
 
@@ -9,9 +9,13 @@ class Header extends Component {
 
     render() {
         return (
-            <div className={styles.header}>
-                <h1>{this.props.title}</h1>
-                <span>{this.props.subTitle}</span>
+            <div>
+                <Jumbotron fluid>
+                    <Container>
+                        <h1>{this.props.title}</h1>
+                        <span>{this.props.subTitle}</span>
+                    </Container>
+                </Jumbotron>
             </div>
         )
     }
